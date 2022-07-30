@@ -65,11 +65,9 @@ public class FrameGestorCandidato extends javax.swing.JFrame {
         campoDescripcion = new javax.swing.JTextArea();
         botonVolver = new javax.swing.JButton();
         botonAgregar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaCandidatos = new javax.swing.JTable();
-        botonEditar = new javax.swing.JButton();
         botonEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -174,10 +172,6 @@ public class FrameGestorCandidato extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Actualizar");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -220,9 +214,7 @@ public class FrameGestorCandidato extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(85, 85, 85)
                 .addComponent(botonVolver)
-                .addGap(55, 55, 55)
-                .addComponent(jButton1)
-                .addGap(55, 55, 55)
+                .addGap(192, 192, 192)
                 .addComponent(botonAgregar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -268,8 +260,7 @@ public class FrameGestorCandidato extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonVolver)
-                    .addComponent(botonAgregar)
-                    .addComponent(jButton1))
+                    .addComponent(botonAgregar))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -287,10 +278,6 @@ public class FrameGestorCandidato extends javax.swing.JFrame {
             }
         ));
         jScrollPane1.setViewportView(tablaCandidatos);
-
-        botonEditar.setBackground(new java.awt.Color(51, 51, 51));
-        botonEditar.setForeground(new java.awt.Color(255, 255, 255));
-        botonEditar.setText("Editar");
 
         botonEliminar.setBackground(new java.awt.Color(51, 51, 51));
         botonEliminar.setForeground(new java.awt.Color(255, 255, 255));
@@ -310,9 +297,7 @@ public class FrameGestorCandidato extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(botonEditar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(99, 371, Short.MAX_VALUE)
                 .addComponent(botonEliminar)
                 .addGap(128, 128, 128))
         );
@@ -322,9 +307,7 @@ public class FrameGestorCandidato extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonEditar)
-                    .addComponent(botonEliminar))
+                .addComponent(botonEliminar)
                 .addGap(18, 18, 18))
         );
 
@@ -485,7 +468,6 @@ public class FrameGestorCandidato extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAgregar;
-    private javax.swing.JButton botonEditar;
     private javax.swing.JButton botonEliminar;
     private javax.swing.JButton botonVolver;
     private javax.swing.JTextField campoCedula;
@@ -496,7 +478,6 @@ public class FrameGestorCandidato extends javax.swing.JFrame {
     private javax.swing.JTextField campoTelefono;
     private javax.swing.JComboBox<String> comboCiudad;
     private javax.swing.JComboBox<String> comboPartido;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

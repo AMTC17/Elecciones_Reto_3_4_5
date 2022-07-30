@@ -15,14 +15,14 @@ import java.util.LinkedList;
  *
  * @author Mauricio
  */
-public class MdlCandidato {
+public class MdlCandidato { /////esto lo uso de referencia
     
     ClsJdbc jdbc;
     
     public MdlCandidato(){
         this.jdbc = new ClsJdbc();
         this.jdbc.CrearConexion();
-    }
+    }///hasta aqui
     
     public ClsMensaje agregarCandidato(ClsCandidato candidato){
         
