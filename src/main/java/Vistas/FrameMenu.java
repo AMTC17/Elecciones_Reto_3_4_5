@@ -12,6 +12,7 @@ public class FrameMenu extends javax.swing.JFrame {
     
     FrameGestorCandidato vistaCandidato;  //primero lo creo
     FrameRegistroVotante vistaVotante;
+    FrameGestorElecciones vistaElecciones;
 
     /**
      * Creates new form FrameMenu
@@ -21,6 +22,7 @@ public class FrameMenu extends javax.swing.JFrame {
         
         this.vistaCandidato = new FrameGestorCandidato(this);  //luego lo pongo en el constructor
         this.vistaVotante = new FrameRegistroVotante(this);
+        this.vistaElecciones = new FrameGestorElecciones(this);
         
     }
 
@@ -163,6 +165,8 @@ public class FrameMenu extends javax.swing.JFrame {
 
     private void botonGestorEleccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGestorEleccionesActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        this.vistaElecciones.setVisible(true);
     }//GEN-LAST:event_botonGestorEleccionesActionPerformed
 
     private void botonRegistroVotanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroVotanteActionPerformed

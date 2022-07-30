@@ -1,23 +1,34 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vistas;
 
 import Clases.ClsEleccion;
+import Clases.ClsMensaje;
+import Controladores.CtlEleccion;
 import java.text.SimpleDateFormat;
+import javax.swing.JFrame;
 
 /**
  *
  * @author Mauricio
  */
 public class FrameGestorElecciones extends javax.swing.JFrame {
+    
+    JFrame menuPrincipal;
+    CtlEleccion controlador;
+    
 
     /**
      * Creates new form FrameGestorElecciones
      */
-    public FrameGestorElecciones() {
+    public FrameGestorElecciones(JFrame menuPrincipal) {
         initComponents();
+        this.menuPrincipal = menuPrincipal;
+        this.controlador = new CtlEleccion();
+        
+        
     }
 
     /**
@@ -190,6 +201,11 @@ public class FrameGestorElecciones extends javax.swing.JFrame {
         botonVolver.setBackground(new java.awt.Color(51, 51, 51));
         botonVolver.setForeground(new java.awt.Color(255, 255, 255));
         botonVolver.setText("Regresar");
+        botonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVolverActionPerformed(evt);
+            }
+        });
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -332,7 +348,14 @@ public class FrameGestorElecciones extends javax.swing.JFrame {
         ClsEleccion eleccionNueva = new ClsEleccion(idEleccion, nombre, 
                 fechaInicio, fechaFin, categoria);
         
+        ClsMensaje mensaje = this.controlador.agregarEleccion(eleccionNueva);
+        
     }//GEN-LAST:event_botonAgregarActionPerformed
+
+    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
+        this.setVisible(false);
+        this.menuPrincipal.setVisible(true);
+    }//GEN-LAST:event_botonVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -364,7 +387,7 @@ public class FrameGestorElecciones extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrameGestorElecciones().setVisible(true);
+                new FrameGestorElecciones(null).setVisible(true);
             }
         });
     }

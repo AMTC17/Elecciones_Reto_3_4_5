@@ -28,9 +28,9 @@ public class MdlEleccion {
         ClsMensaje mensaje;
         
         try{
-            String sql = "INSERT INTO tbl_elecciones VALUES (?, ?, ?, ?, ?, NOW())";
+            String sql = "INSERT INTO tbl_elecciones VALUES (?, ?, ?, ?, ?, NOW(), 'abierta')";
             PreparedStatement sentencia = this.jdbc.conexion.prepareStatement(sql);
-            sentencia.setString(1, eleccion.getIdEleccion());
+            sentencia.setString(1, eleccion.getIdEleccion().substring(0,9));
             sentencia.setString(2, eleccion.getDescripcion());
             sentencia.setString(3, eleccion.getCategoria());
             sentencia.setString(4, eleccion.getFechaInicio());
@@ -38,7 +38,7 @@ public class MdlEleccion {
             
             int resultado = sentencia.executeUpdate();
             
-            if(resultado >=1){
+            if(resultado >=1 ){
                 
                 mensaje = new ClsMensaje(ClsMensaje.OK, 
                         "Se ha añadido una eleccion de manera exitosa");
@@ -49,7 +49,7 @@ public class MdlEleccion {
             return mensaje;
             
             
-        }catch (Exception excepcion){
+        }catch (Exception excepcion){//algo esta pasando y está cambiando la fecha inicial que entra al sistema
             
             mensaje = new ClsMensaje(ClsMensaje.ERROR, "Ocurrio un error" 
                     + excepcion.getMessage());
