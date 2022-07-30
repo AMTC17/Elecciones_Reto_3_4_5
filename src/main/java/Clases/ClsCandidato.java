@@ -12,13 +12,22 @@ public class ClsCandidato extends ClsPersona {
     
     private String partido;
     private String mensajeCampania;
+    private String ciudadOrigen;
+    private String descripcion;
 
-    public ClsCandidato(String partido, String mensajeCampania, String numeroCedula, String nombre) {
-        super(numeroCedula, nombre);
+    public ClsCandidato(String partido, String mensajeCampania, 
+            String ciudadOrigen, String descripcion, String numeroCedula, 
+            String nombre, String Correo, String Telefono) 
+    {
+        super(numeroCedula, nombre, Correo, Telefono);
         this.partido = partido;
         this.mensajeCampania = mensajeCampania;
+        this.ciudadOrigen = ciudadOrigen;
+        this.descripcion = descripcion;
     }
 
+    
+    
     /**
      * @return the partido
      */
@@ -34,24 +43,45 @@ public class ClsCandidato extends ClsPersona {
     }
 
     /**
-     * @return the mensajeCampaña
+     * @return the mensajeCampania
      */
     public String getMensajeCampania() {
         return mensajeCampania;
     }
 
     /**
-     * @param mensajeCampaña the mensajeCampaña to set
+     * @param mensajeCampania the mensajeCampania to set
      */
     public void setMensajeCampania(String mensajeCampania) {
         this.mensajeCampania = mensajeCampania;
     }
-    
 
-    
-    
-    
-    
+    /**
+     * @return the ciudadOrigen
+     */
+    public String getCiudadOrigen() {
+        return ciudadOrigen;
+    }
 
-    
+    /**
+     * @param ciudadOrigen the ciudadOrigen to set
+     */
+    public void setCiudadOrigen(String ciudadOrigen) {
+        this.ciudadOrigen = ciudadOrigen;
+    }
+
+    /**
+     * @return the descripcion
+     */
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    /**
+     * @param descripcion the descripcion to set
+     */
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
 }
