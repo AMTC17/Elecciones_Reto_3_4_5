@@ -5,6 +5,8 @@
 
 package com.amtc.elecciones_reto_3_4_5;
 
+import Clases.ClsJdbc;
+
 /**
  *
  * @author Mauricio
@@ -12,6 +14,10 @@ package com.amtc.elecciones_reto_3_4_5;
 public class Elecciones_Reto_3_4_5 {
 
     public static void main(String[] args) {
-        System.out.println("Hello mundo!");
+        //System.out.println("Hello mundo!");
+        
+        ClsJdbc jdbc = new ClsJdbc();
+        jdbc.CrearConexion();
+        
     }
 }

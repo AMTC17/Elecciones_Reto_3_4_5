@@ -6,6 +6,7 @@ package Controladores;
 
 import Clases.ClsCandidato;
 import Modelos.MdlCandidato;
+import java.util.LinkedList;
 
 /**
  *
@@ -20,7 +21,10 @@ public class CtlCandidato {
         
     }
     
-    
+    public LinkedList<ClsCandidato> ObtenerCandidatos(){
+       
+        return this.modeloCandidato.ObtenerCandidatos();
+    }
     
     //metodo para recibir la info de la vista
     
