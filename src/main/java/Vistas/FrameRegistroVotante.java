@@ -4,7 +4,9 @@
  */
 package Vistas;
 
+import Clases.ClsMensaje;
 import Clases.ClsVotante;
+import Controladores.CtlVotante;
 import javax.swing.JFrame;
 /**
  *
@@ -13,6 +15,7 @@ import javax.swing.JFrame;
 public class FrameRegistroVotante extends javax.swing.JFrame {
 
     JFrame menuPrincipal;
+    CtlVotante controladorVotante;
     
     /**
      * Creates new form FrameRegistroVotante
@@ -20,6 +23,8 @@ public class FrameRegistroVotante extends javax.swing.JFrame {
     public FrameRegistroVotante(JFrame menuPrincipal) {
         initComponents();
         this.menuPrincipal = menuPrincipal;
+        this.controladorVotante = new CtlVotante();
+        
     }
 
     /**
@@ -44,7 +49,7 @@ public class FrameRegistroVotante extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         campoDireccion = new javax.swing.JTextField();
         botonVolver = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        botonAgregar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,9 +103,14 @@ public class FrameRegistroVotante extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(51, 51, 51));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Agregar");
+        botonAgregar.setBackground(new java.awt.Color(51, 51, 51));
+        botonAgregar.setForeground(new java.awt.Color(255, 255, 255));
+        botonAgregar.setText("Agregar");
+        botonAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -117,7 +127,7 @@ public class FrameRegistroVotante extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(botonVolver)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 190, Short.MAX_VALUE)
-                                .addComponent(jButton2))
+                                .addComponent(botonAgregar))
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
@@ -158,7 +168,7 @@ public class FrameRegistroVotante extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonVolver)
-                    .addComponent(jButton2))
+                    .addComponent(botonAgregar))
                 .addGap(14, 14, 14))
         );
 
@@ -180,6 +190,21 @@ public class FrameRegistroVotante extends javax.swing.JFrame {
         this.setVisible(false);
         this.menuPrincipal.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
+
+    private void botonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarActionPerformed
+        
+        String numeroCedula = this.campoCedula.getText();
+        String nombre = this.campoNombre.getText();
+        String correo = this.campoCorreo.getText();
+        String telefono = this.campoTelefono.getText();
+        String direccion = this.campoDireccion.getText();
+        
+        ClsVotante votante = new ClsVotante(direccion, numeroCedula, nombre, 
+                correo, telefono);
+        
+        ClsMensaje mensaje = this.controladorVotante.agregarVotante(votante);
+        
+    }//GEN-LAST:event_botonAgregarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,13 +242,13 @@ public class FrameRegistroVotante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonAgregar;
     private javax.swing.JButton botonVolver;
     private javax.swing.JTextField campoCedula;
     private javax.swing.JTextField campoCorreo;
     private javax.swing.JTextField campoDireccion;
     private javax.swing.JTextField campoNombre;
     private javax.swing.JTextField campoTelefono;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
