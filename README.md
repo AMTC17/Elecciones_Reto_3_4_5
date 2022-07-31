@@ -4,7 +4,7 @@ Autor: Andres Mauricio Trujillo Castañeda
 
 Version
 
-V0.6.5    30/07/2022
+V0.6.5    30/07/2022 <br />
 -4 de 5 interfaces graficas creadas y conectadas <br />
 -Se tiene Alimentacion de BD de los candidatos, votantes y elecciones<br />
 -Se tiene alimentacion de las tablas desde la DB para votantes y elecciones, pendiente alimentar votantes ya que la tabla seria en la interfaz de gestion de elecciones<br />
