@@ -8,6 +8,7 @@ import Clases.ClsMensaje;
 import Clases.ClsVotante;
 import Controladores.CtlVotante;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Mauricio
@@ -204,6 +205,7 @@ public class FrameRegistroVotante extends javax.swing.JFrame {
         
         ClsMensaje mensaje = this.controladorVotante.agregarVotante(votante);
         
+        JOptionPane.showMessageDialog(rootPane, mensaje.getTexto());
     }//GEN-LAST:event_botonAgregarActionPerformed
 
     /**

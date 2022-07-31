@@ -7,6 +7,7 @@ package Controladores;
 import Clases.ClsEleccion;
 import Clases.ClsMensaje;
 import Modelos.MdlEleccion;
+import java.util.LinkedList;
 
 /**
  *
@@ -18,6 +19,12 @@ public class CtlEleccion {
     
     public CtlEleccion(){
         this.modelo = new MdlEleccion();
+    }
+    
+    public LinkedList<ClsEleccion> ObtenerElecciones(){
+        LinkedList<ClsEleccion> listaElecciones = this.modelo.ObtenerElecciones();
+        return listaElecciones;
+        
     }
     
     public ClsMensaje agregarEleccion(ClsEleccion eleccion){

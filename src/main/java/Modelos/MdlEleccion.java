@@ -8,6 +8,8 @@ import Clases.ClsEleccion;
 import Clases.ClsJdbc;
 import Clases.ClsMensaje;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.LinkedList;
 
 /**
  *
@@ -49,7 +51,7 @@ public class MdlEleccion {
             return mensaje;
             
             
-        }catch (Exception excepcion){//algo esta pasando y está cambiando la fecha inicial que entra al sistema
+        }catch (Exception excepcion){//algo esta pasando y está cambiando la fecha inicial que entra al sistema//era un error de netbeans
             
             mensaje = new ClsMensaje(ClsMensaje.ERROR, "Ocurrio un error" 
                     + excepcion.getMessage());
@@ -60,7 +62,40 @@ public class MdlEleccion {
         
     }
     
-    
+    public LinkedList<ClsEleccion> ObtenerElecciones(){
+        
+        try{
+            
+            LinkedList<ClsEleccion> listaElecciones = new LinkedList<>();
+            
+            String consulta = "SELECT * FROM tbl_elecciones";
+            PreparedStatement sentencia = this.jdbc.conexion.prepareStatement(consulta);
+            ResultSet resultados = sentencia.executeQuery();
+            
+            while(resultados.next()){
+                
+                String idEleccion = resultados.getString("id_eleccion");
+                String descripcion = resultados.getString("descripcion");
+                String fechaInicio =  resultados.getString("fecha_inicio");
+                String fechaFin = resultados.getString("fecha_fin");
+                String categoria = resultados.getString("categoria");
+                
+                ClsEleccion eleccion = new ClsEleccion(idEleccion, descripcion, 
+                        fechaInicio, fechaFin, categoria);
+                
+                listaElecciones.add(eleccion);
+            }
+            return listaElecciones;
+            
+        }catch(Exception e){
+            
+            return null;
+        }
+        
+        
+        
+        
+    }
     
     
 }
